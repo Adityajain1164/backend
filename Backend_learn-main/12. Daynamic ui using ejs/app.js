@@ -6,10 +6,16 @@ const express = require("express");
 
 //* local module
 const userRouter = require("./routes/userRoutes");
-const hostRouter = require("./routes/hostRouter");
+const { hostRouter } = require("./routes/hostRouter");
 const rootDir = require("./utils/path");
 
 const app = express();
+
+//* we have to tell express app that we are using a templating engine which is ejs
+
+app.set("view engine", "ejs");
+app.set("views", "views");
+
 app.use((req, res, next) => {
   console.log(req.method, req.url);
   next();
@@ -24,8 +30,8 @@ app.use("/host", hostRouter);
 app.use(express.static(path.join(rootDir, "public")));
 
 app.use((req, res, next) => {
-  res.sendFile(path.join(rootDir, "views", "404.html"));
-}); //* odering is very important
+  res.status(404).render("404", { pageTitle: "Page Not Found" });
+});
 
 const PORT = 3000;
 app.listen(PORT, () => {
