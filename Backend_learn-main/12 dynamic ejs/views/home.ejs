@@ -1,0 +1,129 @@
+<%- include('partials/head') %>
+<body class="bg-gray-100">
+
+  <%- include('partials/navbar') %>
+
+  <!-- Hero Section -->
+  <section class="min-h-[90vh] flex items-center justify-center px-10">
+
+    <div class="max-w-6xl grid md:grid-cols-2 gap-16 items-center">
+
+      <!-- Left Content -->
+      <div>
+
+        <h1 class="text-6xl font-bold leading-tight text-gray-800">
+          Find your perfect
+          <span class="text-rose-500">
+            Airbnb stay
+          </span>
+        </h1>
+
+        <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+          Discover amazing homes, unique experiences, and unforgettable
+          places around the world.
+        </p>
+
+        <div class="mt-8 flex gap-5">
+
+          <a href="/host/add-home"
+            class="bg-rose-500 hover:bg-rose-600 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg transition duration-300">
+            Add Home
+          </a>
+
+          <a href="#"
+            class="border-2 border-gray-300 hover:border-rose-500 hover:text-rose-500 px-8 py-4 rounded-xl text-lg font-semibold transition duration-300">
+            Explore
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- Right Image -->
+      <div class="flex justify-center">
+
+        <img
+          src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop"
+          alt="Airbnb Home"
+          class="rounded-3xl shadow-2xl w-full max-w-lg object-cover"
+        />
+
+      </div>
+
+    </div>
+
+  </section>
+  <!-- Homes Section -->
+<section class="bg-white py-16 px-10">
+
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Heading -->
+    <div class="text-center mb-12">
+
+      <h2 class="text-5xl font-bold text-gray-800">
+        Registered Homes
+      </h2>
+
+      <p class="text-gray-500 mt-4 text-lg">
+        Explore all homes added by our hosts.
+      </p>
+
+    </div>
+
+    <!-- Homes Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      <% resigterHomes.forEach(home => { %>
+
+        <!-- Card -->
+        <div class="bg-gray-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+
+          <!-- Image -->
+          <img
+            src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop"
+            alt="Home Image"
+            class="h-64 w-full object-cover"
+          />
+
+          <!-- Content -->
+          <div class="p-6">
+
+            <h3 class="text-2xl font-bold text-gray-800">
+              <%= home.houseName %>
+            </h3>
+
+            <p class="text-gray-500 mt-3 leading-relaxed">
+              Beautiful and comfortable stay with premium facilities
+              and unforgettable experience.
+            </p>
+
+            <!-- Buttons -->
+            <div class="mt-6 flex gap-4">
+
+              <button
+                class="bg-rose-500 hover:bg-rose-600 text-white px-5 py-3 rounded-xl font-semibold transition duration-300">
+                Book Now
+              </button>
+
+              <button
+                class="border border-gray-300 hover:border-rose-500 hover:text-rose-500 px-5 py-3 rounded-xl font-semibold transition duration-300">
+                Details
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      <% }) %>
+
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+</html>

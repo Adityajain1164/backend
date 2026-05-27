@@ -1,0 +1,49 @@
+<%- include('partials/head') %>
+
+<body class="bg-gray-100 min-h-screen">
+
+  <!-- Navbar -->
+  <%- include('partials/navbar') %>
+
+  <!-- 404 Section -->
+  <section class="flex items-center justify-center min-h-[85vh] px-6">
+
+    <div class="bg-white shadow-2xl rounded-3xl p-12 max-w-2xl w-full text-center">
+
+      <!-- 404 Number -->
+      <h1 class="text-9xl font-extrabold text-rose-500 mb-6">
+        404
+      </h1>
+
+      <!-- Heading -->
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">
+        Oops! Page Not Found
+      </h2>
+
+      <!-- Description -->
+      <p class="text-gray-600 text-lg leading-relaxed mb-10">
+        The page you are looking for does not exist or may have been moved.
+        Please check the URL or return to the homepage.
+      </p>
+
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row gap-5 justify-center">
+
+        <a href="/user/"
+          class="bg-rose-500 hover:bg-rose-600 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg transition duration-300">
+          Go To Home
+        </a>
+
+        <a href="/host/add-home"
+          class="border-2 border-gray-300 hover:border-rose-500 hover:text-rose-500 px-8 py-4 rounded-xl text-lg font-semibold transition duration-300">
+          Add Home
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</body>
+</html>
